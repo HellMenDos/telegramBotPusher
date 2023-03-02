@@ -50,8 +50,6 @@ if __name__=='__main__':
     domain = '******'
     data = requests.get(f'{domain}/user/all/').json()
     slicedData = [data[d:d+500] for d in range(0, len(data), 500)]
-
-    # slicedData = [['866200119','866200119'],['866200119','866200119'],['866200119','866200119'],['866200119','866200119'],['866200119','866200119']]
     pushName = input('Name of pushes: ') 
     pushId = input('pass push id: ') 
     data = requests.get(f'{domain}/push/one/{pushId}/').json()
